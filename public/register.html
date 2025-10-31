@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Registro de Usuario</h2>
+  <form id="registerForm">
+    <input type="text" name="username" placeholder="Usuario" required />
+    <input type="password" name="password" placeholder="Contraseña" required />
+    <button type="submit">Registrar</button>
+  </form>
+
+  <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = {
+        username: e.target.username.value,
+        password: e.target.password.value
+      };
+      const res = await fetch("/api/users/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const msg = await res.json();
+      alert(msg.message);
+      if (msg.message.includes("correctamente")) {
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html>

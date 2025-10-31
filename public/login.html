@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Iniciar Sesión</h2>
+  <form id="loginForm">
+    <input type="text" name="username" placeholder="Usuario" required />
+    <input type="password" name="password" placeholder="Contraseña" required />
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p>¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = {
+        username: e.target.username.value,
+        password: e.target.password.value
+      };
+      const res = await fetch("/api/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const msg = await res.json();
+      alert(msg.message);
+      if (msg.message === "Inicio de sesión exitoso.") {
+        window.location.href = "dashboard.html";
+      }
+    });
+  </script>
+</body>
+</html>
