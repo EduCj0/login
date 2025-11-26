@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Registro</title>
+  <title>Login - Suepo Cats</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <h1 class="titulo-principal">Suepo Cats</h1>
   <h2>Registro de Usuario</h2>
   <form id="registerForm">
     <input type="text" name="username" placeholder="Usuario" required />
@@ -14,7 +16,8 @@
   </form>
 
   <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-
+  <button id="toggleTheme">🌙 Modo Oscuro</button>
+  <script src="theme.js"></script>
   <script>
     document.getElementById("registerForm").addEventListener("submit", async (e) => {
       e.preventDefault();

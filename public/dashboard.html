@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-  <h1>Bienvenido al Panel de Control</h1>
-  <p>Has iniciado sesión correctamente.</p>
-  <a href="login.html">Cerrar sesión</a>
+
+    <!-- NAV PLEGABLE -->
+  <aside id="sidebar">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <div class="nav-content">
+          
+          <div class="nav-item"><span>👤</span><p>Usuarios</p></div>
+          <div class="nav-item"><span>💰</span><p>Ventas</p></div>
+          <div class="nav-item"><span>📊</span><p>Reportes</p></div>
+          <div class="nav-item"><span>⚙️</span><p>Configuración</p></div>
+
+          <button id="toggleTheme">🌙 Modo Oscuro</button>
+      </div>
+  </aside>
+
+    <!-- BARRA SUPERIOR -->
+    <header>
+        <h1 class="titulo-principal">Suepo Cats — Panel Administrativo</h1>
+        <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <h2 class="section-title">Resumen General</h2>
+
+        <!-- TARJETAS -->
+        <section class="cards">
+            <div class="card">Usuarios: 154</div>
+            <div class="card">Ventas Hoy: $12,560</div>
+            <div class="card">Reportes: 8 nuevos</div>
+            <div class="card">Pendientes: 23</div>
+        </section>
+
+        <h3>Actividad reciente</h3>
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <th>Actividad</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>Registró venta</td>
+                <td>2025-11-26</td>
+                <td class="acciones">
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </main>
+
+    <!-- JS -->
+    <script src="theme.js"></script>
+    <script>
+    function cerrarSesion() {
+      window.location.href = "login.html";
+    }
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("expanded");
+    }
+    </script>
+    
 </body>
 </html>

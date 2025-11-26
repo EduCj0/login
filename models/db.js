@@ -2,9 +2,9 @@ const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root", // cambia si tu usuario es otro
-  password: "root", // agrega tu contraseña si tiene
-  database: "login" // nombre de tu base de datos en HeidiSQL
+  user: "root", 
+  password: "root", 
+  database: "login" 
 });
 
 connection.connect((err) => {

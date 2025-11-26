@@ -27,3 +27,126 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
 }
+
+body.dark {
+  background-color: #0d0f12;
+  color: #ffffff;
+}
+
+body.dark form {
+  background: #1a1d21;
+  box-shadow: 0 0 10px #000;
+}
+
+body.dark input {
+  background: #2a2d31;
+  border: 1px solid #444;
+  color: white;
+}
+
+body.dark input::placeholder {
+  color: #bbb;
+}
+
+body.dark button {
+  background: #4a8cff;
+}
+
+body.dark a {
+  color: #7fb3ff;
+}
+
+body.dark #toggleTheme {
+  background: #222;
+  color: #fff;
+}
+
+
+button,
+#toggleTheme {
+  transition: transform 0.12s ease, background 0.2s;
+}
+
+button:hover,
+#toggleTheme:hover {
+  transform: scale(1.05);
+  background: #0056d2; 
+}
+
+button:active,
+#toggleTheme:active {
+  transform: scale(0.95);
+}
+
+body.dark button,
+body.dark #toggleTheme {
+  transition: transform 0.12s ease, background 0.2s;
+}
+
+body.dark button:hover,
+body.dark #toggleTheme:hover {
+  transform: scale(1.05);
+  background: #5b9aff; 
+}
+
+body.dark button:active,
+body.dark #toggleTheme:active {
+  transform: scale(0.95);
+}
+
+form,
+input,
+button,
+#toggleTheme,
+a {
+  transition: 
+    background-color 0.35s ease, 
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Título principal con efecto neón moderno */
+.titulo-principal {
+  font-size: 52px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #222; /* Base en modo claro */
+  letter-spacing: 1.5px;
+  user-select: none;
+
+  /* Glow suave */
+  text-shadow:
+    0 0 4px rgba(0,0,0,0.25),
+    0 0 8px rgba(0,0,0,0.15);
+
+  transition: 
+    color 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+/* === MODO OSCURO === */
+body.dark .titulo-principal {
+  color: #ffffff;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.4),
+    0 0 12px rgba(255,255,255,0.25),
+    0 0 18px rgba(255,255,255,0.15);
+}
+
+/* Hover opcional — más brillo si lo quieres */
+.titulo-principal:hover {
+  text-shadow:
+    0 0 6px rgba(0,0,0,0.3),
+    0 0 12px rgba(0,0,0,0.2),
+    0 0 20px rgba(0,0,0,0.15);
+}
+
+body.dark .titulo-principal:hover {
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 20px rgba(255,255,255,0.4),
+    0 0 30px rgba(255,255,255,0.25);
+}
+
+
